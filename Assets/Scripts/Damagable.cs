@@ -18,6 +18,11 @@ public class Damagable : MonoBehaviour
         {
             health = value;
             OnHealthChange?.Invoke((float)Health / MaxHealth);
+
+            if (gameObject.CompareTag("Player"))
+            {
+                UIManager.instance.ShowHealthBar((float)Health / MaxHealth);
+            }
         }
     }
 
@@ -55,5 +60,14 @@ public class Damagable : MonoBehaviour
         Health += healthBoost;
         Health = Mathf.Clamp(Health, 0, MaxHealth);
         OnHeal?.Invoke();
+    }
+
+    // player
+    public void Dead()
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.GameOver();
+        }
     }
 }

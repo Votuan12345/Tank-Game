@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour
     [SerializeField] List<Transform> turretBarrels;
 
     public TurretData turretData;
+    [SerializeField] private GameObject bulletPrefab;
 
     private bool canShoot = true;
     private Collider2D[] tankColliders;
@@ -28,7 +29,7 @@ public class Turret : MonoBehaviour
 
     private void Start()
     {
-        bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
+        bulletPool.Initialize(bulletPrefab, bulletPoolCount);
         OnReloading?.Invoke(currentDelay / turretData.reloadDelay);
     }
 

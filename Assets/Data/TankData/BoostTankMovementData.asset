@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2e76e2ac7705140b2b1624fbd0302f, type: 3}
   m_Name: BoostTankMovementData
   m_EditorClassIdentifier: 
-  maxSpeed: 100
-  rotationSpeed: 180
+  maxSpeed: 85
+  rotationSpeed: 200
   acceleration: 70
   deacceleration: 50

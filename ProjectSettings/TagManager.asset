@@ -17,8 +17,8 @@ TagManager:
   - ObstaclesMovement
   - Player
   - Enemy
-  - 
-  - 
+  - Coin
+  - PathPoint
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 886504895
+    locked: 0
+  - name: 'PathPoint '
+    uniqueID: 858092523
     locked: 0
   - name: Player
     uniqueID: 1975585433

@@ -6,7 +6,7 @@ public class AIDerector : MonoBehaviour
 {
     [Range(1, 15)]
     [SerializeField] 
-    private float viewRadius = 11f;
+    private float viewRadius = 2.5f;
     [SerializeField]
     private float dectionCheckDelay = 0.1f;
     [SerializeField]
