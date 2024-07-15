@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058f6af3c21c9c942868d198378c7652, type: 3}
   m_Name: SlowTurretData
   m_EditorClassIdentifier: 
-  reloadDelay: 1.2
+  reloadDelay: 1
   bulletData: {fileID: 11400000, guid: 0b8cfb0db9245a24f9cb35322ac90637, type: 2}

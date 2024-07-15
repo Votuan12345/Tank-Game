@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject winPanel;
+
     [SerializeField] private TextMeshProUGUI m_TextMeshProUGUI;
     [SerializeField] private Slider healthSlider;
 
@@ -37,6 +39,7 @@ public class UIManager : MonoBehaviour
         ShowCoinText(0.ToString());
         ShowMenuPanel(false);
         ShowGameOverPanel(false);
+        ShowWinPanel(false);
     }
 
     public void ShowCoinText(string txt)
@@ -65,6 +68,19 @@ public class UIManager : MonoBehaviour
         if(gameOverPanel != null)
         {
             gameOverPanel.SetActive(value);
+        }
+    }
+
+    public void ShowWinPanel(bool value)
+    {
+        if (winPanel != null)
+        {
+            winPanel.SetActive(value);
+        }
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        if(playerInput != null && value)
+        {
+            playerInput.gameObject.SetActive(false);
         }
     }
 

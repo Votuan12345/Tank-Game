@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -68,6 +69,11 @@ public class Damagable : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             GameManager.instance.GameOver();
+            Camera camera = Camera.main;
+            if(camera != null)
+            {
+                camera.AddComponent<AudioListener>();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EndPoint : MonoBehaviour
 {
     [SerializeField] private List<Transform> transforms;
-
+    [SerializeField] private bool isFinalLevel = false;
     private int randomIndex;
     private AudioSource m_AudioSource;
 
@@ -28,7 +28,14 @@ public class EndPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            UIManager.instance.NextLevel();
+            if (!isFinalLevel)
+            {
+                UIManager.instance.NextLevel();
+            }
+            else
+            {
+                UIManager.instance.ShowWinPanel(true);
+            }
             if(m_AudioSource != null)
             {
                 m_AudioSource.Play();
