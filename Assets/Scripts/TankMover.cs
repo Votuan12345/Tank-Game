@@ -12,7 +12,7 @@ public class TankMover : MonoBehaviour
     public TankMovementData movementData;
 
     [SerializeField] private float currentSpeed = 0; 
-    [SerializeField] private float currentForewarDirection = 1;
+    [SerializeField] private float currentForwardDirection = 1;
 
     public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
 
@@ -31,11 +31,11 @@ public class TankMover : MonoBehaviour
 
         if(movementVector.y > 0)
         {
-            currentForewarDirection = 1;
+            currentForwardDirection = 1;
         }
         else if(movementVector.y < 0)
         {
-            currentForewarDirection = -1;
+            currentForwardDirection = -1;
         }
     }
 
@@ -56,7 +56,7 @@ public class TankMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = (Vector2)transform.up * currentSpeed * currentForewarDirection * Time.fixedDeltaTime;
+        rb.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
 
         // xoay theo chiều kim đồng hồ thi nhấn mũi tên phải
         rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x
